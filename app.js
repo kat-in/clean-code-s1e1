@@ -41,7 +41,7 @@ var createNewTaskElement=function(taskString){
     checkBox.type="checkbox";
     checkBox.className="task-item__checkbox"
     editInput.type="text";
-    editInput.className="task-field input-text task-item__input";
+    editInput.className="task-field input task-item__input";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="btn btn_edit";
@@ -85,7 +85,7 @@ var editTask=function(){
 
     var listItem=this.parentNode;
 
-    var editInput=listItem.querySelector(".input-text");
+    var editInput=listItem.querySelector(".input");
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".btn_edit");
     var containsClass=listItem.classList.contains("task-item_editing");
@@ -180,15 +180,11 @@ for (var i=0; i<incompleteTaskHolder.children.length;i++){
 }
 
 
-
-
 //cycle over completedTasksHolder ul list items
 for (var i=0; i<completedTasksHolder.children.length;i++){
     //bind events to list items chldren(tasksIncompleted)
     bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
 }
-
-
 
 
 // Issues with usability don't get seen until they are in front of a human tester.
